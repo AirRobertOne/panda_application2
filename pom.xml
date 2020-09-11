@@ -14,12 +14,14 @@
   <version>0.0.2-SNAPSHOT</version>
   <name>panda</name>
   <description>Demo project for Spring Boot</description>
-  <distributionManagement>
+ <!-- 
+   <distributionManagement>
     <repository>
       <id>ftp-repository</id>
       <url>ftp://ftp.net4you.net/repository</url>
     </repository>
   </distributionManagement>
+-->
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -82,6 +84,11 @@
       </extension>
     </extensions>
   </build>
+
+
+
+
+
   <profiles>
     <profile>
       <id>selenium</id>
@@ -163,5 +170,18 @@
       </build>
     </profile>
   </profiles>
-</project>
 
+<distributionManagement>
+  <repository>
+    <id>artifactory</id>
+<name>release</name>
+<url>http://192.168.44.44:8081/artifactory/libs-release-local</url>
+  </repository>
+
+  <snapshotRepository>
+    <id>artifactory</id>
+<name>snapshots</name>
+<url>http://192.168.44.44:8081/artifactory/libs-snapshot-local</url>
+  </snapshotRepository>
+</distributionManagement>
+</project>
